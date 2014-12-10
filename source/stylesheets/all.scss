@@ -1,0 +1,26 @@
+@charset "utf-8";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.wip {
+  font-size: 16px;
+}
+
+hr {
+  border: 1px solid black;
+}
+
+footer {
+  margin-bottom: 10px;
+}
+
+img {
+  float: right;
+  margin-left: 10px;
+  width: 130px;
+}
