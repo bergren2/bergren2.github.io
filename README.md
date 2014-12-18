@@ -26,6 +26,9 @@ Fire up
 
 and then check out the site at [localhost:4567](http://localhost:4567).
 
+Note: `source` is the main development branch, as `master` is used for the
+compiled site.
+
 ## Deployment
 
     $ bin/rake publish
@@ -34,6 +37,7 @@ and then check out the site at [localhost:4567](http://localhost:4567).
     $ git branch -d master
     $ git branch master
     $ git push -f origin master
+    $ git checkout source
 
 This will publish the finished site to the branch `gh-pages`. At this point you
 will need to manually copy the contents of `gh-pages` over to `master` for
