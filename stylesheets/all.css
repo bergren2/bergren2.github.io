@@ -6734,9 +6734,10 @@ hr {
 
 /* line 18, /Users/bergren2/Workspaces/bergren2.github.io/source/stylesheets/all.scss */
 footer {
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  text-align: center; }
 
-/* line 22, /Users/bergren2/Workspaces/bergren2.github.io/source/stylesheets/all.scss */
+/* line 23, /Users/bergren2/Workspaces/bergren2.github.io/source/stylesheets/all.scss */
 img {
   float: right;
   margin-left: 10px;
