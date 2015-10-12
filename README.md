@@ -9,13 +9,16 @@ You should have the following minimally setup:
 - [Git](https://help.github.com/articles/set-up-git) (duh)
 - [rbenv](https://github.com/sstephenson/rbenv)
 & [ruby-build](https://github.com/sstephenson/ruby-build)
+- [homebrew](http://brew.sh)
 
 ## Initial Project Setup
 
+    $ brew install openssl
     $ git clone git@github.com:bergren2/bergren2.github.io.git
     $ cd bergren2.github.io
     $ rbenv install
     $ gem install bundler
+    $ gem install eventmachine -- --with-cppflags=-I/usr/local/opt/openssl/include
     $ bundle install
 
 ## Development
