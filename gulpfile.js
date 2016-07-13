@@ -7,7 +7,9 @@ var SRC_PATH = "./src/";
 var DIST_PATH = "./dist/";
 
 gulp.task("deploy", ["build"], function () {
-  return gulp.src("./dist/**/*").pipe(ghPages());
+  return gulp.src("./dist/**/*").pipe(ghPages({
+    branch: "master"
+  }));
 });
 
 gulp.task("build", function () {
