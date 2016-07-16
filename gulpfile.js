@@ -1,15 +1,16 @@
 var del = require("del");
 var gulp = require("gulp");
-var ghPages = require("gulp-gh-pages");
+var ghpages = require("gh-pages");
 var nodemon = require("gulp-nodemon");
+var path = require("path");
 
 var SRC_PATH = "./src/";
 var DIST_PATH = "./dist/";
 
-gulp.task("deploy", ["build"], function () {
-  return gulp.src("./dist/**/*").pipe(ghPages({
-    branch: "master"
-  }));
+gulp.task("deploy", ["build"], function (cb) {
+  return ghpages.publish(path.join(__dirname, "dist"), { branch: "master" }, function () {
+    cb();
+  });
 });
 
 gulp.task("build", function () {
