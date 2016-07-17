@@ -2,67 +2,34 @@
 
 It's a site for all of my projects.
 
-## Environment Prereqs
+## Prereqs
 
-You should have the following minimally setup:
+- [Node](https://nodejs.org/en/)
+- [nodenv](https://github.com/nodenv/nodenv)
+  - `$ nodenv install`
 
-- [Git](https://help.github.com/articles/set-up-git) (duh)
-- [rbenv](https://github.com/sstephenson/rbenv)
-& [ruby-build](https://github.com/sstephenson/ruby-build)
-- [homebrew](http://brew.sh)
+## Setup
 
-## Initial Project Setup
-
-    $ brew install openssl
-    $ git clone git@github.com:bergren2/bergren2.github.io.git
-    $ cd bergren2.github.io
-    $ rbenv install
-    $ gem install bundler
-    $ gem install eventmachine -- --with-cppflags=-I/usr/local/opt/openssl/include
-    $ bundle install
+    $ nodenv install
+    $ npm install
 
 ## Development
 
-Fire up
+    $ gulp server
 
-    $ bin/middleman server
+Then head to [localhost:8080](http://localhost:8080). Magic!
 
-and then check out the site at [localhost:4567](http://localhost:4567).
+## Build
 
-Note: `source` is the main development branch, as `master` is used for the
-compiled site.
+This will create a production-ready static site in the `dist` directory.
 
-## Deployment
+    $ gulp build
 
-    $ bin/rake publish
-    $ git checkout gh-pages
-    $ git pull
-    $ git branch -d master
-    $ git branch master
-    $ git push -f origin master
-    $ git checkout source
+## Deploy
 
-This will publish the finished site to the branch `gh-pages`. At this point you
-will need to manually copy the contents of `gh-pages` over to `master` for
-publication.
+Deploys will always try to `build` first.
 
-Please see the relevant [issue](https://github.com/neo/middleman-gh-pages/issues/7)
-and [pull request](https://github.com/neo/middleman-gh-pages/pull/10) for when
-this process gets automated using the [Middleman GitHub Pages gem](https://github.com/neo/middleman-gh-pages).
-
-### Caveats
-
-If your directory is dirty, `git stash` before deploying.
-
-If Rake complains about there already being an `origin` remote, remove the `build`
-directory in its entirety.
-
-## Configuration
-
-After launching the development server, navigate to
-[localhost:4567/__middleman/config](http://localhost:4567/__middleman/config)
-for documentation on configuring Middleman. You should not have to relaunch the
-server after making changes to `config.rb`.
+    $ gulp deploy
 
 ## License
 
